@@ -16,7 +16,7 @@ body {
   min-height: inherit;
   display: grid;
   grid-template-columns: max-content 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1fr 1fr;
 }
 
 .nav {
@@ -25,7 +25,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content;
-  align-content: space-around;
+
   /* grid-template-rows: repeat(7, 1fr); */
 }
 
@@ -37,7 +37,7 @@ body {
 
 .header {
   /* background-color: red; */
-  margin: 8px;
+  margin: 48px 0px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   justify-items: start;
@@ -57,6 +57,7 @@ body {
   color: #e7e7ea;
   font-family: "Open Sans", sans-serif;
   font-size: 36px;
+  letter-spacing: -0.5px;
 }
 
 .bottom {
@@ -67,11 +68,11 @@ body {
 
 .links {
   /* background-color: purple; */
-  margin: 8px;
+  margin: 4px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   /* grid-template-rows: max-content; */
-  align-items: end;
+  align-items: center;
   justify-items: start;
   border-radius: 8px;
   padding: 12px 0;
@@ -94,4 +95,71 @@ body {
   font-size: 20px;
   color: #e7e7ea;
   font-weight: 700;
+}
+
+.topNav {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.bar-1 {
+  grid-row: 1;
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.search-left {
+  grid-column: 1;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  /* border: 1px solid lime; */
+}
+
+.search-right {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  /* border: 1px solid steelblue; */
+}
+
+.search-right h3 {
+  justify-self: start;
+  font-family: "Roboto", sans-serif;
+}
+
+#search {
+  width: 100%;
+  max-width: 60%;
+  height: 50%;
+  border: 1px solid #cecfd6;
+  background-color: #f5f7f9;
+  border-radius: 20px;
+  font-family: Arial, FontAwesome;
+  padding: 10px;
+}
+
+.search-right img {
+  width: 50px;
+  border-radius: 50%;
+}
+.search-right svg {
+  width: 20px;
+}
+
+.bar-2 {
+  grid-row: 2;
+  border: 1px solid pink;
+}
+
+.left img {
+  width: 70px;
+  border-radius: 50%;
 }
