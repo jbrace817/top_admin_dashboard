@@ -133,13 +133,22 @@ body {
   background-color: var(--accent-color);
   background-color: var(--accent-color);
 }
-.closed:hover {
+.links.highlight {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.links.closed {
+  width: calc(35px + (50 - 35) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.links.closed:hover {
   cursor: pointer;
   /* width: 54px; */
   width: calc(35px + (50 - 35) * ((100vw - 300px) / (1600 - 300)));
-  /* margin-right: 40px; */
+  margin-right: 40px;
 
-  background-color: var(--accent-color);
   background-color: var(--accent-color);
 }
 
@@ -152,6 +161,7 @@ body {
   fill: var(--nav-fontIcon-color);
   fill: var(--nav-fontIcon-color);
 }
+
 .links p {
   grid-column: 2;
   font-family: "Roboto", sans-serif;

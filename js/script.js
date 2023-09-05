@@ -25,3 +25,17 @@ menu.addEventListener("click", (e) => {
 
   links.forEach((link) => link.classList.toggle("closed"));
 });
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    const highlight = document.querySelectorAll(".highlight");
+    link.classList.toggle("highlight");
+    if (highlight.length >= 1) {
+      for (var i = 0; i < links.length; i++) {
+        var links2 = links[i];
+        links2.classList.remove("highlight");
+      }
+      link.classList.toggle("highlight");
+    }
+  });
+});
