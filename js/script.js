@@ -13,11 +13,13 @@ menu.addEventListener("click", (e) => {
     logo.style.visibility = "hidden";
     h1.style.visibility = "hidden";
     paras.forEach((p) => (p.style.display = "none"));
+    menu.style.transform = "rotate(180deg)";
   } else {
     setTimeout(() => {
       logo.style.visibility = "visible";
       h1.style.visibility = "visible";
       paras.forEach((p) => (p.style.display = "block"));
+      menu.style.transform = "rotate(360deg)";
     }, 200);
   }
 
