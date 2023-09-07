@@ -4,6 +4,9 @@ const h1 = document.querySelector("h1");
 const logo = document.querySelector(".logo");
 const links = document.querySelectorAll(".links");
 const paras = document.querySelectorAll(".links > p");
+const navTop = document.querySelector(".top");
+const navBottom = document.querySelector(".bottom");
+const container = document.querySelector(".container");
 
 menu.addEventListener("click", (e) => {
   nav.classList.toggle("short");
@@ -24,6 +27,8 @@ menu.addEventListener("click", (e) => {
   }
 
   links.forEach((link) => link.classList.toggle("closed"));
+  navTop.classList.toggle("closed");
+  navBottom.classList.toggle("closed");
 });
 
 links.forEach((link) => {
@@ -39,3 +44,45 @@ links.forEach((link) => {
     }
   });
 });
+
+function screenOrientation() {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    const portrait = window.matchMedia("(orientation:portrait)").matches;
+    const landscape = window.matchMedia("(orientation:landscape)").matches;
+
+    if (portrait) {
+      container.style.height = "100vh";
+    } else {
+      container.style.height = "200vh";
+    }
+
+    window
+      .matchMedia("(orientation: portrait)")
+      .addEventListener("change", (e) => {
+        const portrait = e.matches;
+
+        if (portrait) {
+          container.style.height = "100vh";
+        } else {
+          container.style.height = "200vh";
+        }
+      });
+    window
+      .matchMedia("(orientation: landscape)")
+      .addEventListener("change", (e) => {
+        const landscape = e.matches;
+
+        if (landscape) {
+          container.style.height = "200vh";
+        } else {
+          container.style.height = "100vh";
+        }
+      });
+  }
+}
+
+screenOrientation();

@@ -31,7 +31,7 @@ body {
   min-height: 0; */
   overflow: auto;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 0.01fr auto auto;
   grid-template-rows: 0.5fr 1fr 1fr;
 }
 
@@ -57,13 +57,25 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 0.52fr;
   /* width: 62px; */
-  width: calc(44px + (59 - 44) * ((100vw - 300px) / (1600 - 300)));
+
+  width: calc(40px + (59 - 40) * ((100vw - 300px) / (1600 - 300)));
+  /* width: calc(44px + (59 - 44) * ((100vw - 300px) / (1600 - 300))); */
   /* overflow: hidden; */
 }
 
 .top {
   display: grid;
   grid-template-columns: 1fr;
+
+  grid-template-rows: repeat(6, max-content);
+  transition: grid-template-columns 200ms ease-in-out;
+}
+
+.top.closed {
+  display: grid;
+  grid-template-columns: calc(
+    40px + (59 - 40) * ((100vw - 300px) / (1600 - 300))
+  );
   grid-template-rows: repeat(6, max-content);
 }
 
@@ -114,41 +126,48 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, max-content);
+  transition: grid-template-columns 200ms ease-in-out;
+}
+
+.bottom.closed {
+  display: grid;
+  grid-template-columns: calc(
+    40px + (59 - 40) * ((100vw - 300px) / (1600 - 300))
+  );
+  grid-template-rows: repeat(3, max-content);
 }
 
 .links {
-  margin: 4px;
+  margin-left: 2%;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  /* grid-template-rows: max-content; */
   align-items: center;
   justify-items: start;
   border-radius: 8px;
   padding: 12px 0;
   gap: 16px;
+  width: auto;
 }
 
 .links:hover {
   cursor: pointer;
   background-color: var(--accent-color);
-  background-color: var(--accent-color);
+  width: 96%;
 }
+
 .links.highlight {
   cursor: pointer;
   background-color: var(--accent-color);
-  background-color: var(--accent-color);
+  width: 96%;
 }
 
-.links.closed {
-  width: calc(35px + (50 - 35) * ((100vw - 300px) / (1600 - 300)));
+.links.hightlight.closed {
+  width: 96%;
 }
 
-.links.closed:hover {
+.links.highlight.closed:hover {
   cursor: pointer;
-  /* width: 54px; */
-  width: calc(35px + (50 - 35) * ((100vw - 300px) / (1600 - 300)));
-  margin-right: 40px;
-
+  width: 96%;
   background-color: var(--accent-color);
 }
 
@@ -481,15 +500,15 @@ h3 {
   .header h1 {
     margin-right: 15px;
   }
-}
-@media (max-width: 768px) {
-  .header h1 {
-    margin-right: 60px;
-  }
 } */
+/* @media (max-width: 992px) {
+  .links {
+    width: 96.4%;
+  }
+}
 
-/* @media (orientation: landscape) {
-  .container {
-    height: 200vh;
+@media (max-width: 576px) {
+  .links {
+    width: 95.5%;
   }
 } */
