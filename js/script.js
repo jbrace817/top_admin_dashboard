@@ -1,3 +1,4 @@
+/** Global Variables */
 const nav = document.querySelector(".nav");
 const menu = document.querySelector(".menu");
 const h1 = document.querySelector("h1");
@@ -8,6 +9,7 @@ const navTop = document.querySelector(".top");
 const navBottom = document.querySelector(".bottom");
 const container = document.querySelector(".container");
 
+/** Event listener for Navigation menu. */
 menu.addEventListener("click", (e) => {
   nav.classList.toggle("short");
   h1.classList.toggle("short");
@@ -45,6 +47,7 @@ links.forEach((link) => {
   });
 });
 
+/** Function to detect if it is a mobile device and what orientation it is in. */
 function screenOrientation() {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

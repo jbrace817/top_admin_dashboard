@@ -24,6 +24,7 @@ body {
   height: -webkit-fill-available;
 }
 
+/* Grid container for page layout*/
 .container {
   height: 100vh;
   overflow: auto;
@@ -44,6 +45,7 @@ body {
   width: calc(175px + (305 - 175) * ((100vw - 300px) / (1600 - 300)));
 }
 
+/* collapsed nav pane */
 .short {
   grid-row: 1 / 4;
   background-color: var(--nav-bgr-color);
@@ -54,6 +56,7 @@ body {
   width: calc(40px + (59 - 40) * ((100vw - 300px) / (1600 - 300)));
 }
 
+/* Top section of Nav pane */
 .top {
   display: grid;
   grid-template-columns: 1fr;
@@ -105,6 +108,7 @@ body {
   letter-spacing: -0.5px;
 }
 
+/* bottom section of nave pane*/
 .bottom {
   display: grid;
   grid-template-columns: 1fr;
@@ -118,6 +122,12 @@ body {
     40px + (59 - 40) * ((100vw - 300px) / (1600 - 300))
   );
   grid-template-rows: repeat(3, max-content);
+}
+
+/* Navigation links on the nav pane. */
+
+a {
+  text-decoration: none;
 }
 
 .links {
@@ -171,6 +181,7 @@ body {
   font-weight: 700;
 }
 
+/* Top section of dashboard. contains search bar, buttons and user avatar*/
 .topNav {
   grid-column: 2 / 4;
   grid-row: 1;
@@ -208,6 +219,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Search bar. */
 #search {
   width: 100%;
   max-width: 70%;
@@ -298,6 +310,7 @@ body {
   background-color: #4761c6;
 }
 
+/* Area for project, announcements, and trending cards. */
 .article {
   grid-column: 2 / 4;
   grid-row: 2 / 4;
